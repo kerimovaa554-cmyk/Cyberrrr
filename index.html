@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="UTF-8">
-    <title>Untitled</title>
+    <title>Html </title>
     
 
   </head>
@@ -11,51 +11,53 @@
   <body>
   <!doctype html>
 
-<html lang="az">
+<html lang="en">
 
 <head>
 
-<meta charset="utf-8" />
+<meta charset="utf-8"/>
 
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
 
-<title>Think before we click</title>
+<title>Think before we click — Prank</title>
 
 <style>
 
-  :root{--bg:#071026;--accent:#ffd166;--muted:#cbd5e1}
+  :root{--danger:#ff3b30;--safe:#22c55e;--muted:#bfc9d9}
+
+  *{box-sizing:border-box}
 
   html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;}
 
-  body{background:linear-gradient(180deg,#020617 0%, #071026 100%); color:var(--muted); display:flex;align-items:center;justify-content:center;padding:20px;}
+  /* <-- burda background tam qara olaraq təyin edilib --> */
 
-  .card{width:100%;max-width:820px;background:rgba(255,255,255,0.02);border-radius:14px;padding:28px;box-shadow:0 10px 40px rgba(2,6,23,0.7);border:1px solid rgba(255,255,255,0.03)}
+  body{background:#000000;display:flex;align-items:center;justify-content:center;color:var(--muted)}
 
-  .bigtext{font-size:34px;font-weight:800;color:#fff;margin:6px 0;letter-spacing:0.6px}
+  .wrap{width:100%;max-width:900px;padding:28px;border-radius:14px;text-align:center}
 
-  .subtitle{font-size:16px;color:var(--muted);margin-bottom:18px}
+  .big{font-size:44px;font-weight:800;letter-spacing:0.6px;color:var(--danger);margin:0}
 
-  .banner{display:flex;align-items:center;gap:14px}
+  .sub{margin-top:14px;font-size:18px;color:rgba(255,255,255,0.85)}
 
-  .badge{padding:10px 14px;border-radius:10px;background:rgba(255,209,102,0.08);color:var(--accent);font-weight:700}
+  .bar{margin-top:24px;height:10px;border-radius:999px;background:rgba(255,255,255,0.04);overflow:hidden}
 
-  .controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+  .loader{height:100%;width:0%;background:linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.18));transition:width 3s linear}
 
-  button{cursor:pointer;border:0;padding:10px 14px;border-radius:10px;font-weight:700;background:#0b1220;color:white}
-
-  button.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
-
-  .reveal{margin-top:18px;padding:16px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.02));display:none}
+  .reveal{display:none;margin-top:20px;padding:18px;border-radius:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
 
   .reveal.show{display:block}
 
-  .reveal .title{font-size:18px;color:#e6fffb;font-weight:700}
+  .reveal .title{font-size:22px;font-weight:700;color:var(--safe)}
 
-  .reveal .text{margin-top:8px;color:#b6c7d9}
+  .reveal .text{margin-top:8px;color:var(--muted)}
 
-  footer{margin-top:18px;font-size:12px;color:#7f98ad}
+  button{margin-top:12px;padding:10px 14px;border-radius:10px;border:0;background:#0f1724;color:white;cursor:pointer;font-weight:700}
 
-  @media (max-width:520px){ .bigtext{font-size:26px} }
+  @media (max-width:520px){ .big{font-size:28px} }
+
+  .flicker{animation:flick 1.2s linear 1}
+
+  @keyframes flick {0%{opacity:1}25%{opacity:0.25}50%{opacity:1}75%{opacity:0.6}100%{opacity:1}}
 
 </style>
 
@@ -63,59 +65,67 @@
 
 <body>
 
-  <div class="card" role="region" aria-label="Prank səhifəsi">
+  <div class="wrap" role="region" aria-label="Prank page">
 
-    <div class="banner">
+    <div id="stage">
 
-      <div class="badge">⚠️</div>
+      <div id="dangerText" class="big flicker">The phone is hacking....</div>
 
-      <div>
+      <div class="sub">Please stay calm. Checking... </div>
 
-        <div class="bigtext">Think before we click</div>
+      <div class="bar" aria-hidden="true" style="margin-top:20px">
 
-        <div class="subtitle">Bir az dayan — hər linki açmazdan əvvəl düşün. (Təhlükəsiz zarafat)</div>
+        <div id="loader" class="loader"></div>
 
       </div>
 
     </div>
 
-    <div class="controls" aria-hidden="false">
-
-      <button id="revealBtn">Nə baş verir? (Aç)</button>
-
-      <button class="secondary" id="resetBtn">Bağla / Yenilə</button>
-
-    </div>
-
     <div id="reveal" class="reveal" aria-live="polite">
 
-      <div class="title">😄 GOTCHA — Bu bir zarafatdır</div>
+      <div class="title"> Think before we click </div>
 
-      <div class="text">Heç bir telefon hack edilməyib. Bu səhifə yalnız zarafat məqsədi daşıyır və dostunu qorxutmaq yox, ona xatırlatma etmək üçündür: linklərə ehtiyatla klikləyək.</div>
+      <div class="text">Thınk before clıck for your lıfe</div>
 
-      <div class="text" style="margin-top:8px;font-weight:600">Məsləhət: Dostunu əsəbləşdirmədən istifadə et — əvvəlcədən xəbərdar etmək yaxşı seçimdir.</div>
+      <button id="okBtn">Tamam, başa düşdüm</button>
 
     </div>
-
-    <footer>Hazırlayan: Sənin harmless prank • Faylı paylaşarkən məsuliyyətli ol.</footer>
 
   </div>
 
 <script>
 
-  document.getElementById('revealBtn').addEventListener('click', function(){
+  const loader = document.getElementById('loader');
 
-    document.getElementById('reveal').classList.add('show');
+  const reveal = document.getElementById('reveal');
 
-    this.disabled = true;
+  const dangerText = document.getElementById('dangerText');
 
-  });
+  setTimeout(()=> loader.style.width = '100%', 50);
 
-  document.getElementById('resetBtn').addEventListener('click', function(){
+  setTimeout(()=>{
 
-    document.getElementById('reveal').classList.remove('show');
+    dangerText.classList.remove('flicker');
 
-    document.getElementById('revealBtn').disabled = false;
+    dangerText.textContent = '...';
+
+    reveal.classList.add('show');
+
+  }, 10000);
+
+  document.getElementById('okBtn').addEventListener('click', ()=>{
+
+    reveal.classList.remove('show');
+
+    dangerText.textContent = 'Think before we click';
+
+    dangerText.style.color = '';
+
+    dangerText.style.fontSize = '32px';
+
+    document.querySelector('.sub').textContent = 'This was a harmless reminder — always be careful with links.';
+
+    loader.style.width = '0%';
 
   });
 
